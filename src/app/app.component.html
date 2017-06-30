@@ -1,0 +1,15 @@
+<div><img src="../asserts/images.jpg" />
+
+    <span class="header"> {{title}}</span>
+</div>
+<div class="mybody">
+    Search Student <input type="text" [(ngModel)]='filter' />
+    <p>List filtered by {{filter}}</p>
+    <ul>
+        <li *ngFor="let student of studentList | stdFilter:filter" (click)="selectStudent(student)">
+            {{student.name}}
+        </li>
+    </ul>
+
+    <p *ngIf='selectedStudent'>User selected {{selectedStudent.name}}</p>
+</div>
